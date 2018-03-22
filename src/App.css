@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+
+}
+
+.App-header {
+  background: #22c1c3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  height: 200px;
+  padding: 60px 20px 20px 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 2.5em;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Baloo Paaji', cursive;
+ 
+
+
+
+
+}
+
+.App-intro {
+  font-size: large;
+  width: 60%;
+  margin: 0 auto;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
