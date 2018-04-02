@@ -1,8 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import store, { history } from './redux/store/configure-store';
+import store, { history } from 'reduxFolder/store/configureStore';
  
 const App = () => (
   <Provider store={store}>
@@ -12,8 +11,4 @@ const App = () => (
   </Provider>
 );
  
-const rootEl = document.getElementById('app');
-
-ReactDOM.render(
-    <App/>
-, rootEl);
+export default App;
