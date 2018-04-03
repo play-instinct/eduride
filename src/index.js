@@ -12,7 +12,7 @@ const App = () => (
   </Provider>
 );
  
-const rootEl = document.getElementById('app');
+const rootEl = document.getElementById('root');
 
 ReactDOM.render(
     <App/>
