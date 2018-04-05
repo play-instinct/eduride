@@ -13,7 +13,7 @@ class App extends Component {
         Schedule and book rides for your children from the people you know and trust - fellow parents, guardians, and members of your school community. 
         </p>
         </header>
-       
+       <hr/>
       </div>
     );
   }
