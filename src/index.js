@@ -32,12 +32,14 @@ const App = () => (
         <header className="App-header">
         <img src={logo} className="logo"/>
           <h1 className="App-title">EduRide</h1>
+          <hr/>
           <p className="App-intro">
         Schedule and book rides for your children from the people you know and trust - fellow parents, guardians, and members of your school community. 
         </p>
+        
         </header>
-        <hr/>
-        <div className="action-container"><button class="sign-up-btn">Sign Up</button></div>
+       
+        <div className="action-container"><button className="sign-up-btn">Sign Up</button></div>
       </div>
     </ConnectedRouter>
   </Provider>

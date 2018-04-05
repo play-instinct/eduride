@@ -5,7 +5,6 @@
 .App-intro {
   font-family: sans-serif;
   width: 60%;
-  margin: 0 auto;
 }
 
 
@@ -22,6 +21,9 @@
   background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+.action-container {
+  margin-top: 30px;
 }
 
 .navbar-header{
@@ -237,14 +239,11 @@ a:hover { color: #777; }
   color: white;
   font-family: 'Baloo Paaji', cursive;
   font-size: 18px;
-  -webkit-transition-delay: 0.2s;
-  -o-transition-delay: 0.2s;
-  transition-delay: 0.2s;
  }
 
  .sign-up-btn:hover{
    background-color: white;
-   color: black;
+   color:#22c1c3;;
    
  }
 
