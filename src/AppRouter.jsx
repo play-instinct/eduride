@@ -1,14 +1,19 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-import store, { history } from 'reduxFolder/store/configureStore';
- 
-const App = () => (
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <h1>App</h1>
-    </ConnectedRouter>
-  </Provider>
+import { Switch, Route } from 'react-router-dom';
+
+import Main from './layouts/main/Main.layout';
+import LandingPage from './containers/landing-page/LandingPage.container';
+import Login from './containers/login/Login.container';
+
+const AppRouter = () => (
+  <React.Fragment>
+    <Switch>
+      <Main>
+        <Route exact path="/" component={ LandingPage } />
+        <Route exact path="/login" component={ Login } />
+      </Main>
+    </Switch>
+  </React.Fragment>
 );
- 
-export default App;
+
+export default AppRouter;
