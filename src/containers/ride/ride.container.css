@@ -1,0 +1,313 @@
+* {
+    box-sizing: border-box;
+  }
+  .myForm {
+    display: grid;
+    grid-template-areas: 
+      "customer seats"
+      "customer extras"
+      "pickup dropoff"
+      "instructions instructions"
+      "submit submit";
+  	grid-template-columns: auto auto;  
+  	grid-template-rows: auto auto auto auto;
+    grid-gap: 1em .5em;
+    padding: .6em;
+    color: white;
+    font-family: sans-serif;
+    width: 80%;
+    background-color: rgba(191, 216, 227, .4);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin: 10px auto;
+  }
+
+  .myForm textarea {
+    height: calc(100% - 1.5em);
+    }
+  .myForm button {
+    padding: 1em;
+    }
+  .myForm input:not([type=radio]):not([type=checkbox]), 
+  .myForm textarea, 
+  .myForm select {
+   	width: 100%;
+    border: 0;
+    padding: .6em;
+    margin: .5em 0;
+    background-color: #ffffff73;
+
+  }
+  .myForm label {
+   display: block; 
+  }
+
+#pickup > input, #pickup > select {
+  margin-bottom:10px;
+}
+  fieldset {
+    border: 0;
+  }
+  #customer {
+    grid-area: customer;
+  }
+  #extras {
+    grid-area: extras;
+  }
+  #pickup {
+    grid-area: pickup;
+  }
+  #dropoff {
+    grid-area: dropoff;
+  }
+  #instructions {
+    grid-area: instructions;
+  }
+  #submit {
+    grid-area: submit;
+  }
+
+
+
+ * {
+  box-sizing: border-box;
+}
+
+
+h1,
+.login,
+.account,
+.contact{
+  width:80%;
+  margin: 0 auto;
+ 
+}
+
+@supports (display: flex) {
+  .login-container, .signup-container, {
+    padding:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  h1, .login, .account, .contact {
+    margin: 0;
+    width: 80%;
+  }
+}
+
+#pickup_place {
+  padding-top: 10px;
+}
+
+input#pickup_time {
+  font-family: sans-serif;
+  font-size: 16px;
+  background-color: #ffffff73;
+  color: white;
+}
+#pickup > label {
+  /* margin-bottom: 15px; */
+}
+
+#pickup {
+
+}
+
+#note {
+  height: 200px;
+  background-color:#ffffff73;
+}
+.marg {
+  margin-top: 10px;
+}
+@supports (display: grid) {
+  .login-container {
+    display: grid;
+    font-family: sans-serif;
+    grid-template-columns: auto;
+    align-content: center;
+    align-items: stretch;
+  }
+  @media (min-width: 650px) {
+    body {
+      grid-template-columns: repeat(2, minmax(150px, 30%));
+    }
+    h1,
+    .login {
+      grid-column-end: span 2;
+      width: auto;
+    }
+    .login > div {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: center;
+    }
+    .login > div.actions {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .account {
+      border-right: 1px dotted rgb(191, 216, 227);
+      padding: 0 10px 0 0;
+      width: auto;
+    }
+    .contact {
+      padding: 0 0 0 10px;
+      width: auto;
+    }
+    input[type="submit"] {
+      grid-column: 2;
+    }
+    .actions a {
+      justify-self: end;
+    }
+  }
+}
+
+h1 {
+  background-color: white;
+  color: #41c1b2;
+  font-family: 'Baloo Paaji', cursive;
+  font-weight: normal;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 10px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.login-container {
+  color: white;
+}
+
+.login-container > h1 {
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+}
+.login {
+  background-color: rgba(191, 216, 227, .4);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px;
+ 
+  margin-bottom: 10px;
+}
+.i-forgot {
+    padding: 10px 15px 10px 15px;
+}
+
+.sub-title {
+  background-color: #ffffff00;
+  text-align: center;
+  margin-bottom: 10px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.login-container > h1 {
+    text-align: center;
+    background-color:rgba(255, 255, 255, 0.61);
+}
+
+input[type="submit"] {
+  border: 0px solid rgba(191, 216, 227, .8);
+  border-radius: 5px;
+  color: #fff;
+  background-color:rgb(43, 193, 191);
+  font-size: 110%;
+}
+
+
+.App-header {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.account > p > a {
+    display: inline;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+.contact > p > a {
+  display: inline;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+
+.account > p {
+    padding-top: 15px;
+    margin: 0px;
+}
+input
+ {
+  border: 2px solid rgba(191, 216, 227, .8);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 110%;
+  width: 100%;
+}
+
+.actions a {
+  font-size: 80%;
+}
+
+
+#extras input {
+  width: auto;
+  border: 1px solid red;
+}
+
+#extras legend {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+
+form.myForm.login {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+#number, #radius {
+  width: 50px;
+    font-size: 20px;
+    padding: 0.2em;
+    margin-right: 10px;
+}
+
+#seats legend, #extras legend {
+  border-bottom: 1px solid #ffffff8c;
+  padding-bottom: 6px;
+  margin-top: 16px;
+  width: 100%;
+  font-size: 16px;
+}
+
+#seats > label, #dropoff > label {
+  display: inline;
+}
+
+.test > label {
+  padding-left: 0px;
+}
+
+.expl {
+  width: 80%;
+  padding-left: 0px;
+}
+
+
+#submit {
+  border: 0px solid rgba(191, 216, 227, .8);
+  border-radius: 5px;
+  color: #fff;
+  background-color: rgb(43, 193, 191);
+  font-size: 110%;
+  margin: 15px;
+}

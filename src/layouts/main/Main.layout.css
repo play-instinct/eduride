@@ -1,8 +1,8 @@
-.App {
+.app {
     text-align: center;
   }
   
-  .App-intro {
+  .app-intro {
     font-family: sans-serif;
     width: 60%;
   }
@@ -24,6 +24,7 @@
   }
   .action-container {
     margin-top: 30px;
+    text-align:center;
   }
   
   .navbar-header{
@@ -33,25 +34,25 @@
   .navbar-menu-container{
   
   }
-  .App, body {
+  .app, body {
     padding: 0px;
     margin: 0px;
     background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
   }
-  .App-header {
+  .app-header {
     background: #22c1c3;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding-top: 30px;
     margin-top: 20px;
-    height: 200px;
-    padding: 60px 20px 20px 20px;
+    padding: 10px 20px 0px 20px;
     color: white;
+    text-align: center;
   }
   
-  .App-title {
+  .app-title {
     font-size: 2.5em;
     margin: 0px;
     padding: 0px;
@@ -63,7 +64,7 @@
   
   }
   
-  .App-intro {
+  .app-intro {
     font-size: large;
     width: 60%;
     margin: 0 auto;
@@ -128,9 +129,9 @@
     height: 28px;
     padding-right: 10px;
   }
-  .navigation a.main {
+  .navigation a.main, li {
     display: block; 
-    height: 40px;
+    height: 50px;
     font-family: 'Baloo Paaji', cursive;
     font-size: 28px;
     text-align: center; 
@@ -143,8 +144,7 @@
     transition: 0.2s ease-in-out;
   }
   
-  .navigation:hover a.main {
-    border-bottom: 3px solid white; 
+  .navigation:hover a.main, li {
     -webkit-transition: 0.2s ease-in-out;
     -o-transition: 0.2s ease-in-out;
     transition: 0.2s ease-in-out; 
@@ -156,12 +156,12 @@
     font: normal 12px/40px arial, sans-serif !important; 
     text-align: center;
     margin: 0;
-    -webkit-transform-origin: 50% 0%;
+    /* -webkit-transform-origin: 50% 0%;
     -o-transform-origin: 50% 0%;
     transform-origin: 50% 0%;
     -webkit-transform: perspective(350px) rotateX(-90deg);
     -o-transform: perspective(350px) rotateX(-90deg);
-    transform: perspective(350px) rotateX(-90deg);
+    transform: perspective(350px) rotateX(-90deg); */
   
   }
   
