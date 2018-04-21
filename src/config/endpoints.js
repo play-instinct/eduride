@@ -14,6 +14,6 @@ export default {
   /**
    * Path used to fetch rides
    */
-  RIDES_ENDPOINT: `${MAIN_APP_AUTHORITY}/rides`,
+  RIDES_ENDPOINT: `${MAIN_APP_AUTHORITY}/ride`,
 
 };

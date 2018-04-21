@@ -58,7 +58,6 @@ export function createUser(name, email, password, phoneNumber, address, is_drive
 
 
 const handleCreateUserResponse = (response, dispatch) => {
-    console.log('TEST');
     sessionStorage.setItem(appConfig.TOKEN_CONTENT_KEY, response.token);
     dispatch({
         type: CREATE_USER_REQUEST_SUCCESS,

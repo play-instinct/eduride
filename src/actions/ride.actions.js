@@ -7,25 +7,17 @@ export const REQUEST_TO_CREATE_RIDE_SUCCESS = 'REQUEST_TO_CREATE_RIDE_SUCCESS';
 export const REQUEST_TO_CREATE_RIDE_FAILURE = 'REQUEST_TO_CREATE_RIDE_FAILURE';
 
 
+export const FETCH_RIDES_REQUEST_TRIGGERED = 'FETCH_RIDE_REQUEST_TRIGGERED';
+export const FETCH_RIDES_REQUEST_SUCCESS = 'FETCH_RIDE_REQUEST_SUCCESS';
+export const FETCH_RIDES_REQUEST_FAILURE = 'FETCH_RIDE_REQUEST_FAILURE';
 
-export function createRide(driver, email, phoneNumber, date, courtesyTime, destination, radius, note, pickupLocation, seats, baby_seat, wheelchair_access) {
+
+export function createRide(body) {
     const promise = fetch(`${appConfig.RIDES_ENDPOINT}`, {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          email,
-          driver,
-          phoneNumber,
-          date,
-          seats,
-          courtesyTime,
-          destination,
-          radius,
-          baby_seat,
-          note,
-          wheelchair_access,
-          pickupLocation
-        }),
+        headers: {'Content-Type': 'application/json',
+                Authorization: sessionStorage.getItem(appConfig.TOKEN_CONTENT_KEY)},
+        body: JSON.stringify(body),
     });
     return {
         onRequest: REQUEST_TO_CREATE_RIDE_TRIGGERED,
@@ -37,10 +29,20 @@ export function createRide(driver, email, phoneNumber, date, courtesyTime, desti
 
 
   const handleCreateRideResponse = (response, dispatch) => {
-    console.log('TEST');
     dispatch({
         type: REQUEST_TO_CREATE_RIDE_SUCCESS,
         response,
     });
     dispatch(push('/dashboard'));
 };
+
+
+export function fetchAllRides() {
+    const promise = fetch(`${appConfig.RIDES_ENDPOINT}`);
+    return {
+        onRequest: FETCH_RIDES_REQUEST_TRIGGERED,
+        onSuccess: FETCH_RIDES_REQUEST_SUCCESS,
+        onFailure: FETCH_RIDES_REQUEST_FAILURE,
+        promise,
+    };
+}

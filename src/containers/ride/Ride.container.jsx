@@ -7,21 +7,25 @@ import { createRide } from '../../actions'
 
 class Ride extends React.Component {
   submitHandler(val) {
-    const email = val.email;
-    const name = val.customer_name;
-    const driver = val.customer_name;
-    const phoneNumber = val.phone_number;
-    const seats = val.seats;
-    const date = val.pickup_time;
-    const courtesyTime = val.courtesyTime;
-    const destination = val.address;
-    const pickupLocation = val.pickupLocation;
-    const radius = val.radius;
-    const baby_seat = val.extras_baby;
-    const wheelchair_access = val.extras_wheel;
-    const note = val.note;
-    this.props.createRide(email, driver, phoneNumber, seats, date, courtesyTime, destination, radius, baby_seat, note, wheelchair_access, pickupLocation)
+    const body = {
+      email: val.email,
+      name: val.customer_name,
+      driver: val.customer_name,
+      phoneNumber: val.phone_number,
+      seats: val.seats,
+      date: val.pickup_time,
+      courtesyTime: val.courtesyTime,
+      destination: val.address,
+      pickupLocation: val.pickup_place,
+      radius: val.radius,
+      baby_seat: val.extras_baby,
+      wheelchair_access: val.extras_wheel,
+      note: val.note,
+    }
+    console.log(body)
+    this.props.createRide(body)
   }
+
 
   render(){
     return(
@@ -58,10 +62,10 @@ class Ride extends React.Component {
         
         <fieldset id="pickup">
           <label htmlFor="pickup_time">Pickup Date/Time</label>
-          <input type="datetime-local" name="pickup_time" id="pickup_time"/>
+          <Field name="pickup_time" id="pickup_time" component="input" type="datetime-local"/>
           <label htmlFor="courtesyTime">Courtesy Wait Time</label>
           <Field name="courtesyTime" component="select" id="courtesyTime">
-            <option value="" selected="selected">Select One</option>
+            <option value="">Select One</option>
             <option value="0" >0 minutes</option>
             <option value="3" >3 Minutes</option>
             <option value="5" >5 Minutes</option>
@@ -70,17 +74,17 @@ class Ride extends React.Component {
 
           <label htmlFor="pickup_place" className="marg">Pickup Place</label>
           <Field name="pickup_place" component="select" id="pickup_place">
-            <option value="" selected="selected">Select One</option>
-            <option value="office" >Front of School</option>
-            <option value="town_hall" >Back of School</option>
-            <option value="telepathy" >Parking Lot</option>
+            <option value="">Select One</option>
+            <option value="front_of_school" >Front of School</option>
+            <option value="back_of_school" >Back of School</option>
+            <option value="parking_lot" >Parking Lot</option>
           </Field>
         </fieldset>
 
         <fieldset id="dropoff">
         <label htmlFor="dropoff_place">Dropoff Place</label>
         <Field name="address" component="input" id="address" type="text" placeholder="7434 rudsdale street" required />
-        <input type="number" name="radius" id="radius"/>
+        <Field name="radius" component="input" id="radius" type="number" required />
           <label> Miles</label>
           <div className="expl">The radius reffers to the distance you are willing to go from the pickup point to drop off other passengers. </div>  
         </fieldset>
@@ -104,4 +108,4 @@ const mapStateToProps = state => ({
 
 export default reduxForm({
   form: 'ride'
-})(connect(mapStateToProps)(Ride))
+})(connect(mapStateToProps, { createRide })(Ride))

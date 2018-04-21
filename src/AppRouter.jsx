@@ -5,6 +5,7 @@ import LandingPage from './containers/landing-page/LandingPage.container';
 import Login from './containers/login/Login.container';
 import SignUp from './containers/signup/Signup.container';
 import Ride from './containers/ride/Ride.container';
+import Dashboard from './containers/dashboard/dashboard.container';
 import PrivateRoute from './components/PrivateRoute.component';
 
 const AppRouter = () => (
@@ -15,6 +16,8 @@ const AppRouter = () => (
         <Route exact path="/login" component={ Login } />
         <Route exact path="/signup" component={ SignUp } />
         <Route exact path="/ride" component={ Ride } />
+        <Route exact path="/dashboard" component={ Dashboard } />
+
 
         {/* <PrivateRoute exact path="/ride" component = { Ride }/> */}
       </Main>
