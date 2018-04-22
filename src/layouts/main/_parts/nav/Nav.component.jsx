@@ -7,10 +7,36 @@ import { connect } from 'react-redux';
 
 class Nav extends React.Component {
   render() {  
-    if (this.props.logged_in) {
+    if (!sessionStorage.jwt) {
       return (
-        <div className="test">Hello</div>
-      )} 
+        <nav className="navbar navbar-default">
+      <div className="container-all">
+          <div className="navbar-header">
+          <ul className="navigation">
+            <li className="login-link">
+              <Link to="/"><img src={logo} className="logo"/>EduRide</Link></li>
+          </ul>
+           
+          </div>
+          <div className="navbar-menu-container">
+          <ul className="navigation">
+            <li className="login-link">
+              <Link to="/dashboard" className="main">Dashboard</Link>
+            </li>
+          </ul>
+          </div>
+          <div className="navbar-menu-container">
+            <ul className="navigation">
+            <li className="login-link">
+              <Link to="/dashboard" className="main">Settings</Link>
+            </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+      )
+      
+      } 
     else return (
       <nav className="navbar navbar-default">
       <div className="container-all">
@@ -24,7 +50,7 @@ class Nav extends React.Component {
           <div className="navbar-menu-container">
           <ul className="navigation">
             <li className="login-link">
-              <Link to="/login" className="main">Login</Link>
+            <Link to="/login" className="main">Login</Link>
             </li>
           </ul>
           </div>
@@ -43,7 +69,6 @@ class Nav extends React.Component {
 
 
 Nav.propTypes = {  
-  actions: PropTypes.object.isRequired
 }
 
 function mapStateToProps(state, ownProps) {  

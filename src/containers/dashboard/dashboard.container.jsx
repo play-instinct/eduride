@@ -11,10 +11,14 @@ import Ride from '../../components/ride/ride.component';
 const Dashboard = props => (
   (
     <div className="dashboard-container">
+    <div className="dashboard-user-actions-container"></div>
         <div className="dashboard-header">Dashboard</div>
-            <div styleName="projects-list">
+            <div className="projects-list">
+                <div className="upcoming-rides-container">
+                <div class="scheduled-rides"></div></div>
+                <div className="past-rides-container"></div>
              
-                </div>
+            </div>
             </div>
         ));
     
