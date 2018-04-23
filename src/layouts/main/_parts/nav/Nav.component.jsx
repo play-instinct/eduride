@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 
 class Nav extends React.Component {
   render() {  
-    if (!sessionStorage.jwt) {
+    if (this.props.isLoggedIn) {
       return (
         <nav className="navbar navbar-default">
       <div className="container-all">
@@ -68,11 +68,4 @@ class Nav extends React.Component {
 }
 
 
-Nav.propTypes = {  
-}
-
-function mapStateToProps(state, ownProps) {  
-  return {logged_in: state.session};
-}
-
-export default connect(mapStateToProps)(Nav);
+export default Nav;

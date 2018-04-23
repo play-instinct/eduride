@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './Main.layout.css';
 import logo from './img/logo.svg';
 import Nav from './_parts/nav/Nav.component';
@@ -6,7 +7,7 @@ import Nav from './_parts/nav/Nav.component';
 const Main = props => (
   <div className="App">
     <div className = "overall-nav">
-      <Nav />
+      <Nav isLoggedIn={props.user.isLoggedIn} username={props.user.username} />
     </div>
     <header className="App-header">
       {props.children}
@@ -14,4 +15,9 @@ const Main = props => (
   </div>
 )
 
-export default Main;
+const mapStateToProps = state => ({
+  appState: state.appState,
+  user: state.user,
+});
+
+export default connect(mapStateToProps)(Main);
